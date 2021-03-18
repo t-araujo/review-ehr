@@ -1,0 +1,51 @@
+{
+    "extends": [
+        "standard",
+        "plugin:security/recommended"
+    ],
+    "env": {
+        "mocha": true
+    },
+    "plugins": [
+        "security",
+        "sort-requires",
+        "require-call",
+        "sort-destructure-keys"
+    ],
+    "rules": {
+        "arrow-parens": ["error", "always"],
+        "camelcase": "off",
+        "indent": ["error", 2],
+        "require-atomic-updates": "error",
+        "no-unsafe-finally": "error",
+        "no-unsafe-negation": "error",
+        "no-invalid-regexp": "error",
+        "no-empty": "error",
+        "no-dupe-args": "error",
+        "no-dupe-keys": "error",
+        "no-duplicate-case": "error",
+        "prefer-const": "error",
+        "no-useless-constructor": "error",
+        "no-var": "error",
+        "no-implied-eval": "error",
+        "no-fallthrough": "error",
+        "no-console": "error",
+        "no-debugger": "error",
+        "no-alert": "error",
+        "no-unreachable": "error",
+        "import/newline-after-import": ["error", { "count": 1 }],
+        "comma-dangle": ["error", "always-multiline"],
+        "sort-imports": ["error", {
+            "ignoreCase": false,
+            "ignoreMemberSort": false,
+            "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+        }],
+        "sort-destructure-keys/sort-destructure-keys": [2, {"caseSensitive": false}],
+        "sort-requires/sort-requires": 2,
+        "sort-vars": ["error", { "ignoreCase": true }],
+        "curly": ["error", "all"],
+        "security/detect-object-injection": "error",
+        "standard/no-callback-literal":0,
+        "require-call/no-relative-paths":[2, {"allowLocalSymbol": true}]
+    }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "@gyant/docker_case_review_backend",
+  "version": "0.0.1",
+  "description": "Gyant docker case review API",
+  "license": "ISC",
+  "author": "tiago.mla@hotmail.com",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=12.18.3"
+  },
+  "scripts": {
+    "dev": "DEBUG=app nodemon --watch src",
+    "lint": "eslint --no-ignore src test",
+    "start": "DEBUG=app node src/index.js",
+    "debug": "node --inspect src/index.js",
+    "test": "NODE_ENV=test mocha --timeout 10000 --require app-module-path/cwd --recursive"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "@koa/router": "^9.0.1",
+    "app-module-path": "^2.2.0",
+    "debugnyan": "^2.0.2",
+    "koa": "^2.13.0",
+    "koa-body": "^4.2.0",
+    "koa-compose": "^4.1.0",
+    "koa-compress": "^4.0.1",
+    "koa-helmet": "^5.2.0",
+    "npm": "^7.0.8"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "eslint": "^5.12.0",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-node": "^8.0.0",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-require-call": "^1.0.1",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-sort-destructure-keys": "^1.1.0",
+    "eslint-plugin-sort-requires": "^2.1.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "mocha": "^8.0.1",
+    "nodemon": "^2.0.4",
+    "sinon": "^9.0.2",
+    "faker": "^4.1.0"
+  }
+}
