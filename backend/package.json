@@ -25,6 +25,8 @@
     "koa-compose": "^4.1.0",
     "koa-compress": "^4.0.1",
     "koa-helmet": "^5.2.0",
+    "mongoose": "^5.12.1",
+    "mongoose-auto-increment": "^5.0.1",
     "npm": "^7.0.8"
   },
   "devDependencies": {
