@@ -20,6 +20,7 @@
     "@koa/router": "^9.0.1",
     "app-module-path": "^2.2.0",
     "debugnyan": "^2.0.2",
+    "env-cmd": "^10.1.0",
     "koa": "^2.13.0",
     "koa-body": "^4.2.0",
     "koa-compose": "^4.1.0",
