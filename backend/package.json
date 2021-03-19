@@ -9,11 +9,11 @@
     "node": ">=12.18.3"
   },
   "scripts": {
-    "dev": "DEBUG=app nodemon --watch src",
-    "lint": "eslint --no-ignore src test",
+    "dev": "DEBUG=app env-cmd -f app.env nodemon --watch src",
+    "lint": "eslint --no-ignore src test ",
     "start": "DEBUG=app node src/index.js",
     "debug": "node --inspect src/index.js",
-    "test": "NODE_ENV=test mocha --timeout 10000 --require app-module-path/cwd --recursive"
+    "test": "NODE_ENV=test env-cmd -f app.env mocha --timeout 10000 --require app-module-path/cwd --recursive"
   },
   "dependencies": {
     "@koa/cors": "^3.1.0",
