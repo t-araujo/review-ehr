@@ -1,5 +1,6 @@
 const body = require('koa-body')
 const cors = require('@koa/cors')
+const errors = require('src/middlewares/errors')
 const helmet = require('koa-helmet')
 const Koa = require('koa')
 const Mongoose = require('mongoose')
@@ -27,5 +28,7 @@ app.use(routeLog)
 app.use(body({
   parsedMethods: ['GET', 'POST', 'PUT', 'PATCH'],
 }))
+
+app.use(errors())
 
 module.exports = { app }
