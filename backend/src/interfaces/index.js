@@ -3,6 +3,7 @@ const Router = require('@koa/router')
 const modules = [
   require('./cases'),
   require('./cases-decisions'),
+  require('./conditions'),
 ]
 
 module.exports = (app) => {
