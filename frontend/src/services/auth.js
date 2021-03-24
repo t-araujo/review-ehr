@@ -1,10 +1,10 @@
 import axios from "axios"
 import { API_URL } from "../actions/types"
 
-const login = (username, password) => {
+const loginService = (email, password) => {
   return axios
     .post(`${API_URL}/login`, {
-      username,
+      email,
       password,
     })
     .then((response) => {
@@ -16,11 +16,11 @@ const login = (username, password) => {
     })
 }
 
-const logout = () => {
+const logoutService = () => {
   localStorage.removeItem("user");
 }
 
 export {
-  login,
-  logout,
+  loginService,
+  logoutService,
 }

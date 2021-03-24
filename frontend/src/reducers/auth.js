@@ -4,21 +4,28 @@ LOGIN_FAIL,
 LOGOUT,
 } from "../actions/types";
 
-export default function auth(state = {}, action) {
-  const { type, payload } = action;
+const user = JSON.parse(localStorage.getItem("user"));
+
+const initialState = user
+  ? { isLoggedIn: true, user }
+  : { isLoggedIn: false, user: null };
+
+export default function auth(state = initialState, action) {
+  const { type, user } = action;
 
   switch (type) {
     case LOGIN_SUCCESS:
         return {
             ...state,
             isLoggedIn: true,
-            user: payload.user,
+            user,
         }
 
     case LOGIN_FAIL:
         return {
             ...state,
             isLoggedIn: false,
+            message: action.error,
             user: null,
         }
 
