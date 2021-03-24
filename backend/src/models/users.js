@@ -1,3 +1,4 @@
+const Bcrypt = require('bcrypt')
 const Mongoose = require('mongoose')
 
 const userSchema = new Mongoose.Schema(
@@ -35,6 +36,13 @@ userSchema.method('toClient', function () {
   new_obj.title = obj.title
 
   return new_obj
+})
+
+userSchema.pre('save', async function (next) {
+  const oldPass = this.password
+  this.password = await Bcrypt.hash(oldPass, 10)
+
+  next()
 })
 
 Mongoose.model('Users', userSchema)
