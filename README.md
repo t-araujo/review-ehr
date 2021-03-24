@@ -24,5 +24,10 @@ The instructions for each app are in respectively readme
 * [Frontend](frontend/README.md)
 
 
+## Mock data
 
+To use the app with mock data please use the following credentials:
 
+email: joesmith@gmail.com
+
+password: joesmith
