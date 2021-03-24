@@ -4,6 +4,7 @@ const modules = [
   require('./cases'),
   require('./cases-decisions'),
   require('./conditions'),
+  require('./auth'),
 ]
 
 module.exports = (app) => {
