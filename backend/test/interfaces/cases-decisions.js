@@ -25,19 +25,21 @@ const helperToCreateCaseDecision = async () => {
 }
 describe('Decisions interface', () => {
   describe('GET /decisions', () => {
-    it('Should get all decisions', async () => {
+    it('Should get all decisions', async function () {
       const response = await chai.request(app)
         .get('/api/decisions')
+        .set({ Authorization: `Bearer ${this.authenticatedUser().token}` })
 
       response.should.have.status(200)
     })
   })
 
   describe('POST /decisions', () => {
-    it('Should create one case decision', async () => {
+    it('Should create one case decision', async function () {
       const { cas, condition, doctor } = await helperToCreateCaseDecision()
       const response = await chai.request(app)
         .post('/api/decisions')
+        .set({ Authorization: `Bearer ${this.authenticatedUser().token}` })
         .send({
           doctor_id: doctor._id,
           case_id: cas._id,
@@ -47,9 +49,10 @@ describe('Decisions interface', () => {
       response.should.have.status(201)
     })
 
-    it('Should not create if data is not provided', async () => {
+    it('Should not create if data is not provided', async function () {
       const response = await chai.request(app)
         .post('/api/decisions')
+        .set({ Authorization: `Bearer ${this.authenticatedUser().token}` })
         .send({
           doctor_id: 'adasdasd',
         })

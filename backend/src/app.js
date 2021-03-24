@@ -3,6 +3,7 @@ const cors = require('@koa/cors')
 const errors = require('src/middlewares/errors')
 const helmet = require('koa-helmet')
 const interfaces = require('src/interfaces')
+const jwt = require('koa-jwt')
 const Koa = require('koa')
 const Mongoose = require('mongoose')
 const { get } = require('lodash')
@@ -31,6 +32,8 @@ app.use(body({
 }))
 
 app.use(errors())
+
+app.use(jwt({ secret: process.env.JWT_SECRET }).unless({ path: [/^\/api\/login/] }))
 
 interfaces(app)
 
