@@ -1,0 +1,35 @@
+.casesHeader {
+    height: 50px;
+    border-bottom: 2px solid black;
+    background-color: #FE925E;
+}
+
+.body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    height: 100vh;
+}
+
+.casesDescriptions {
+    border: 2px solid black;
+    min-height: 50%;
+}
+
+.description {
+    flex: 1 1 50%;
+}
+
+.action {
+    flex: 1 1 50%;
+}
+
+.selectCondition {
+    width: 90%;
+    min-height: 300px;
+}
+
+.nextCase {
+    display: flex;
+    justify-content: flex-end;  
+}
